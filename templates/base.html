@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Imobiliária</title>
+    <!-- Bootstrap -->
+    {% block CSS %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/si.css' %}"/>
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block content %}
+    <div class="panel panel-default">
+      
+      {% block heading %}
+      <div class="panel-heading">
+        <nav class="navbar">
+         <div class="container-fluid">
+           <div class="navbar-header">
+             <a class="navbar-brand" href="/">Sistema Imobiliária</a>
+           </div>
+           <ul class="nav navbar-nav">
+             <li class="active"><a href="/">Home</a></li>
+             <li><a href="#">Page 1</a></li>
+             <li><a href="#">Page 2</a></li>
+           </ul>
+           
+           <ul class="nav navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span>
+               {{ request.user }}
+              </a></li> 
+              <li><a href="/contas/logout">
+              <span class="glyphicon glyphicon-log-out"></span>
+               Sair
+              </a></li> 
+            {% else %}
+             <li><a href="/contas">
+               <span class="glyphicon glyphicon-log-in"></span> Entrar
+             </a></li>
+           {% endif %} 
+           </ul>
+         </div>
+        </nav>
+      </div>
+      {% endblock %}
+      
+      {% block body %}
+      <div class="panel-body">Panel Content Base</div>
+      {% endblock %}
+      {% block footer %}
+      <div class="panel-footer">
+        <footer>Panel Footer Base</footer>
+      </div>
+      {% endblock %}
+    </div>
+    {% endblock %}
+
+
+    {% block JavaScript %}
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="{% static 'js/si.js' %}"></script>
+
+    <!-- <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script> -->
+    
+
+    {% endblock %}
+  </body>
+</html>

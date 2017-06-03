@@ -1,0 +1,48 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+<div class="panel-body">
+
+  <div class='formulario'>
+        <h1>Detalhes do Atendimento</h1>
+        </br>
+        </br>
+      <form method="post">{% csrf_token %}
+        <div class="table-responsive">
+          <table class=table>
+            <tr>
+                <th>Cliente</th><td>{{form.cliente}}</td>
+                <th>Situação</th><td>{{form.situacao}}</td>
+            </tr>
+            <table class='table'>
+            <tr><th>Observações</th><td>{{form.observacoes}}</td></tr>
+          </table>
+        </div>
+
+        <div style="margin-top: 3%;">
+
+          <button type="submit" class="btn btn-default" 
+          style="margin-right: 5%;">
+            Alterar
+          </button>
+          <!-- this button be'll displayed if have visits -->
+          <button type="button" class="btn btn-default" style="margin-right: 5%;">
+            Mostrar Visitas Agendadas
+          </button>
+
+          <a href="/imobiliaria/agendar={{ id }}">
+          <button type="button" class="btn btn-default" 
+          style="margin-right: 5%;">
+            Agendar Visita
+          </button>
+          </a>
+        </div>
+
+        
+      </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

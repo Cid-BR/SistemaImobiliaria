@@ -1,0 +1,29 @@
+<div class='scroll'>
+  <table class='table'>
+    <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Bairro</th>
+          <th>Cidade</th>
+          <th>Propprietário</th>
+          <th>Telefone</th>
+          <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for cp in cps %}
+          <tr>
+            <td>{{ cp.tipo }}</td>
+            <td>{{ cp.bairro }}</td>
+            <td>{{ cp.cidade }}</td>
+            <td>{{ cp.proprietario }}</td>
+            <td>{{ cp.telefone }}</td>
+            <td>{{ cp.email }}</td>
+            <td><a href="/imobiliaria/detalhes_atendimento={{ at.id }}">Mais Detalhes</a></td>
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+</div>

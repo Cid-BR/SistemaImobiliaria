@@ -1,0 +1,140 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+<div class="panel-body">
+    
+  <div class='formulario'>
+        <h1>Cadastro de Empreendimento</h1>
+        </br>
+        </br>  
+      <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+        <div class="table-responsive">
+          <table class='table'>
+            <td>{{ form.disponivel }}</td><th>Disponível</th>
+            <td>{{ form.exibir }}</td><th>Exibir no Site</th>
+            <td>{{ form.destaque }}</td><th>Destaque</th>
+          </table>  
+                      
+          <table class="table">
+            <tr>
+                <th>Descrição Curta</th><td>{{ form.descricao_curta }}</td>
+                <th>Proprietário</th><td>{{ form.proprietario }}</td>
+                <th>Logradouro</th><td>{{ form.logradouro }}</td>
+            </tr>
+            <tr>
+                <th>Número</th><td>{{ form.numero }}</td>
+                <th>Complemento</th><td>{{ form.complemento }}</td>
+                <th>Bairro</th><td>{{ form.bairro }}</td>
+            </tr>
+            <tr>
+                <th>Cidade</th><td>{{ form.cidade }}</td>
+                <th>Estado</th><td>{{ form.estado }}</td>
+                <th>País</th><td>{{ form.pais }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th><td>{{ form.nome }}</td>
+                <th>Previsão de Entrega</th><td>{{ form.previsao_entrega }}</td>
+                <th>Vagas na Garagem</th><td>{{ form.vagas_garagem }}</td>
+            </tr>
+            <tr>
+                <th>Áreas das Unidades</th><td>{{ form.areas_das_unidades }}</td>
+                <th>CEP</th><td>{{ form.cep }}</td>
+            </tr>
+            
+        </table>
+        </br></br>
+        <h4>Características</h4>
+        <table class='table' style='float: left'>
+            <tr>
+                <td>{{ form.torneira_quente }}</td><th>Torneira Quente</th>
+                <td>{{ form.gas_canalizado }}</td><th>Gás Canalizado</th>
+                <td>{{ form.piscina }}</td><th>Piscina</th>
+            </tr>
+            <tr>
+                <td>{{ form.salao_fastas }}</td><th>Salão de Festas</th>
+                <td>{{ form.salao_ginastica }}</td><th>Salão de Ginástica</th>
+                <td>{{ form.quadra_esportiva }}</td><th>Quadra Esportiva</th>
+            </tr>
+            <tr>
+                <td>{{ form.sauna }}</td><th>Sauna</th>
+                <td>{{ form.vista_mar }}</td><th>Vista Ao Mar</th>
+                <td>{{ form.portaria_recepcao }}</td><th>Portaria/Recepção</th>
+            </tr>
+            <tr>
+                <td>{{ form.circuito_tv }}</td><th>Circuito de TV</th>
+                <td>{{ form.hall_espera }}</td><th>Hall de Espera</th>
+                <td>{{ form.sala_reunioes }}</td><th>Sala de Reuniões</th>
+            </tr>
+            <tr>
+                <td>{{ form.auditorio }}</td><th>Auditório</th>
+                <td>{{ form.rede_logica }}</td><th>Rede Lógica</th>
+                <td>{{ form.rede_de_piso }}</td><th>Rede de Piso</th>
+            </tr>
+            <tr>
+                <td>{{ form.ar_condicionado_central }}</td>
+                <th>Ar Condicionado Central</th>
+            </tr>
+        
+        <table class='table'>
+            <th>Site do Empreendimento</th>
+            <td>{{ form.site_empreendimento }}</td>
+            
+        </table>
+        
+        <table class='table'>
+            <tr>
+                <th>Observações</th><td>{{ form.observacoes }}</td>
+            </tr>
+        </table>
+        <table class='table'>
+            <tr>
+                <th>Valores e Formas de Pagamento</th>
+                <td>{{ form.valores_formas_pagamento }}</td>
+            </tr>
+        </table>
+        <table class='table'>    
+            <tr>
+                <th>Valor para Exibição</th><td>{{ form.valor_exibicao }}</td>
+                <th>Situação</th><td>{{ form.situacao }}</td>
+                <th>Tipo</th><td>{{ form.tipo }}</td>
+            </tr>
+        </table>
+        </br></br>
+        <h4>Imagens</h4>
+        <table class='table'>
+            <tr>
+                <th>Imagem 1</th><td>{{ form.img1 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 2</th><td>{{ form.img2 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 3</th><td>{{ form.img3 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 4</th><td>{{ form.img4 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 5</th><td>{{ form.img5 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 6</th><td>{{ form.img6 }}</td>
+            </tr>
+        </table>
+        </br></br>
+        <h4>Multimídia</h4>
+        <table class='table' style='width: 50%'>
+            <tr>
+                <th>Vídeo no Youtube</th><td>{{ form.video }}</td>
+            </tr>
+        </table>
+        </div> 
+        <button type="submit" class="btn btn-default">Enviar</button>
+      </form>
+  </div>
+  
+</div>
+
+{% endblock %}
+

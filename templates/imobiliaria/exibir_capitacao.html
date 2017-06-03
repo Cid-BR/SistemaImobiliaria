@@ -1,0 +1,30 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+
+<div class='scroll' id='resposta'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Proprietário</th>
+        <th>Telefone</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for cp in cps %}
+      <tr>
+        <td>{{ cp.proprietario }}</td>
+        <td>{{ cp.telefone }}</td>
+        <td>{{ cp.email }}</td>
+        <td><a href="/imobiliaria/detalhes_capitacao={{ at.id }}">
+        Mais Detalhes</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

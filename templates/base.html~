@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/si.css' %}"/>
+  
+  <script src="{% static 'js/si.js' %}">
+  
+  </script>
+</head>
+<body>
+
+  {% block content %}
+  
+  <div class="panel panel-default">
+      
+      {% block header %}
+
+      <div class="jumbotron">
+        <h2>Sistema Imobiliária Base</h2>
+        
+      </div>
+      {% block header-content %}
+      
+      {% endblock %} <!--end block header-content-->
+      
+      {% endblock %} <!--end block header-->
+      
+      {% block body %}
+      
+
+      {% endblock %} <!--end block body-->
+      
+      {% block footer %}
+      <div class="panel-footer">Panel Base</div>
+      {% endblock %}<!--end block footer-->
+      
+  </div>
+  {% endblock %} <!--end block content-->
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+    <div class="panel-heading">
+        <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Sistema Imobiliária</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+            </ul>
+           
+            <ul class="nav navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+                <li><a href="#"><span class="glyphicon glyphicon-user">
+                </span>
+               {{ request.user }}
+                </a></li> 
+                <li><a href="/contas/logout">
+                <span class="glyphicon glyphicon-log-out"></span>
+               Sair
+                </a></li> 
+            {% else %}
+                <li><a href="/contas">
+                    <span class="glyphicon glyphicon-log-in"></span> Entrar
+                </a></li>
+           {% endif %} 
+            </ul>
+         </div>
+        </nav>
+    </div>
+{% endblock %}
+
+{% block body %}
+  <div class="panel-body">
+  <h3>Página Inicial do Sistema</h3>
+  <h4>Essa página vem antes de o usuário entrar no sistema</h4>
+  </div>
+  <h3>
+    Index do projeto
+  </h3>
+{% endblock %}

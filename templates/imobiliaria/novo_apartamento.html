@@ -1,0 +1,239 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+<div class="panel-body">
+    
+  <div class='formulario'>
+        
+      <form method="post" 
+      enctype="multipart/form-data">
+      {% csrf_token %}
+        <div style="width: 65%; margin-right: auto; margin-left: auto;">
+            {{msg}}
+
+            <h3>Cadastro de Apartamento</h3>
+
+            <div class="table-responsive">
+
+              <table style="width: 100%">
+                <tr>
+                    <td>{{ form.disponivel }}</td><td>{{ form.disponivel.label }}</td>
+                    <td>{{ form.exibir }}</td><td>{{ form.exibir.label }}</td>
+                    <td>{{ form.destaque }}</td><td>{{ form.destaque.label }}</td>
+                </tr>
+                <tr></tr>
+              </table>  
+            </br>  
+            <p>{{ form.descricao_curta.label }} {{ form.descricao_curta }}</p>
+            
+            <p>{{ form.proprietario.label }}</p>
+            <p>{{ form.proprietario }}</p>
+            
+            <p>{{ form.logradouro.label }} {{ form.logradouro }}</p>
+            <p>{{ form.numero.label }} {{ form.numero }}</p>
+            <p>{{ form.complemento.label }} {{ form.complemento }}</p>
+            <p>{{ form.bairro.label }} {{ form.bairro }}</p>
+            <p>{{ form.cidade.label }} {{ form.cidade }}</p>
+            
+            <p>{{ form.estado.label }}</p>
+            <p>{{ form.estado }}</p>
+
+            <p>{{ form.pais.label }} {{ form.pais }}</p>
+            <p>{{ form.cep.label }} {{ form.cep }}</p>
+            
+            <p>{{ form.ponto_referencia.label }}</p>
+            <p>{{ form.ponto_referencia }}</p>
+
+            <p>{{ form.posse_chave.label }}</p>
+            <p>{{ form.posse_chave }}</p>
+
+            <p>{{ form.descricao.label }}</p>
+            <p>{{ form.descricao }}</p>
+
+            <p>{{ form.morador_locatario.label }}</p>
+            <p>{{ form.morador_locatario }}</p>
+
+          
+            
+            <p>{{ form.nome_edificio.label }} {{ form.nome_edificio }}</p>
+            
+            <p>{{ form.tipo.label }}</p> 
+            <p>{{ form.tipo }}</p>
+            
+            <p>{{ form.estado_conservacao.label }}</p> 
+            <p>{{ form.estado_conservacao }}</p>
+            
+            <p>{{ form.area_privativa.label }} {{ form.area_privativa }}</p>
+            <p>{{ form.area_total.label }} {{ form.area_total }}</p>
+            <p>{{ form.idade.label }} {{ form.idade }}</p>
+            
+            <p>{{ form.avaliacao.label }}</p> 
+            <p>{{ form.avaliacao }}</p>
+            
+            <p>{{ form.sanitarios.label }}</p>
+            <p>{{ form.sanitarios }}</p>
+
+            <p>{{ form.dormitorios.label }}</p>
+            <p>{{ form.dormitorios }}</p>
+            
+            <p>{{ form.suites.label }}</p>
+            <p>{{ form.suites }}</p>
+            
+            <p>{{ form.salas.label }}</p>
+            <p>{{ form.salas }}</p>
+
+            <p>{{ form.cozinhas.label }}</p>
+            <p>{{ form.cozinhas }}</p>
+
+            <p>{{ form.areas_servico.label }}</p>
+            <p>{{ form.areas_servico }}</p>
+
+            <p>{{ form.sacadas.label }}</p>
+            <p>{{ form.sacadas }}</p>
+
+            <p>{{ form.dep_empregada.label }}</p>
+            <p>{{ form.dep_empregada }}</p>
+
+            <p>{{ form.garagens.label }}</p>
+            <p>{{ form.garagens }}</p>
+
+            <p>{{ form.garagens.label }}</p>
+            <p>{{ form.garagens }}</p>
+
+            <p>{{ form.elevadores.label }}</p>
+            <p>{{ form.elevadores }}</p>
+
+            <p>{{ form.elevadores.label }}</p>
+            <p>{{ form.elevadores }}</p>
+            </br>
+            <h4>Características</h4>
+            <table style="width: 100%">
+                <tr>
+                    <td>{{ form.interfone }}</td>
+                    <th>{{ form.interfone.label }}</th>
+                    <td>{{ form.torneira_quente }}</td><th>{{ form.torneira_quente.label }}</th>
+                    <td>{{ form.gas_canalizado }}</td><th>{{ form.gas_canalizado.label }}</th>
+                </tr>
+                <tr>
+                    <td>{{ form.mobiliado }}</td><th>Mobiliado</th>
+                    <td>{{ form.armarios }}</td><th>Armários</th>
+                    <td>{{ form.closet }}</td><th>Closet</th>
+                </tr>
+                <tr>
+                    <td>{{ form.piscina_privativa }}</td><th>Piscina Privativa</th>
+                    <td>{{ form.piscina_comum }}</td><th>Piscina Comum</th>
+                    <td>{{ form.portaria }}</td><th>Portaria</th>
+                </tr>
+                <tr>
+                    <td>{{ form.salao_festas }}</td><th>{{ form.salao_festas.label }}</th>
+                    <td>{{ form.salao_ginastica }}</td><th>{{ form.salao_ginastica.label }}</th>
+                    <td>{{ form.salao_jogos }}</td><th>{{ form.salao_jogos.label }}</th>
+                </tr>
+                <tr>
+                    <td>{{ form.playground }}</td><th>{{ form.playground.label }}</th>
+                    <td>{{ form.quadra_esportiva }}</td><th>{{ form.quadra_esportiva.label }}</th>
+                    <td>{{ form.churrasqueira }}</td><th>{{ form.churrasqueira.label }}</th>
+                </tr>
+                <tr>
+                    <td>{{ form.brinquedoteca }}</td><th>{{ form.brinquedoteca.label }}</th>
+                    <td>{{ form.sauna }}</td><th>{{ form.sauna.label }}</th>
+                    <td>{{ form.vista_mar }}</td><th>{{ form.vista_mar.label }}</th>
+                </tr>
+                <tr>
+                    <td>{{ form.espaco_gourmet }}</td>
+                    <th>{{ form.espaco_gourmet.label }}</th>
+                    <td>{{ form.lan_house }}</td>
+                    <th>{{ form.lan_house.label }}</th>
+                </tr>
+              </table>
+            </br>
+            <h4>Venda</h4>
+            
+            <p>{{ form.valor_venda.label }}</p>
+            <p>{{ form.valor_venda }}</p>
+            
+            <p>{{ form.pagamento.label }}</p>
+            <p>{{ form.pagamento }}</p>
+            </br>
+            <h4>Aluguel</h4>
+            <p>{{ form.valor_aluguel.label }}</p>
+            <p>{{ form.valor_aluguel }}</p>
+            
+            <p>{{ form.frequencia_aluguel.label }}</p>
+            <p>{{ form.frequencia_aluguel }}</p>
+            </br>
+            <h4>Aluguel por Temporada</h4>
+            <p>{{ form.valor_altaemporada.label }}</p>
+            <p>{{ form.valor_altaemporada }}</p>
+            
+            <p>{{ form.valor_baixaemporada.label }}</p>
+            <p>{{ form.valor_baixaemporada }}</p>
+
+            <p>{{ form.frequencia_temporada.label }}</p>
+            <p>{{ form.frequencia_temporada }}</p>
+
+            <p>{{ form.acomodacoes.label }}</p>
+            <p>{{ form.acomodacoes }}</p>
+            </br>
+            <h4>Taxas</h4>
+            <p>{{ form.condominio.label }}</p>
+            <p>{{ form.condominio }}</p>
+
+            <p>{{ form.iptu.label }}</p>
+            <p>{{ form.iptu }}</p>
+            </br>
+            <p>{{ form.taxas_extras.label }}</p>
+            <p>{{ form.taxas_extras }}</p>
+            </br>
+            <h4>Documentos</h4>
+            <p>{{ form.numero_matricola.label }}</p>
+            <p>{{ form.numero_matricola }}</p>
+
+            <p>{{ form.situacao.label }}</p>
+            <p>{{ form.situacao }}</p>
+            
+            <p>Título Aquisitivo</p>
+            <p>{{ form.titulo_aquisitivo }}</p>
+            </br>
+            <h4>Imagens</h4>
+            <table>
+                <tr>
+                    <td>{{ form.img1.label }}</td>
+                    <td>{{ form.img1 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.img2.label }}</td>
+                    <td>{{ form.img2 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.img3.label }}</td>
+                    <td>{{ form.img3 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.img4.label }}</td>
+                    <td>{{ form.img4 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.img5.label }}</td>
+                    <td>{{ form.img5 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.img6.label }}</td>
+                    <td>{{ form.img6 }}</td>
+                </tr>
+            </table>
+            </br>
+            <h4>Multimídia</h4>
+            <p>Vídeo no Youtube</p>
+            <p>{{ form.video }}</p>
+            
+            </div> 
+            <button type="submit" class="btn btn-default">Enviar</button>
+        </div>
+      </form>
+  </div>
+  
+</div>
+
+{% endblock %}
+

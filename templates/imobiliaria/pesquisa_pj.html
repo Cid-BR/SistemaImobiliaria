@@ -1,0 +1,29 @@
+<!-- So far all went testeds -->
+
+<div class='scroll'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome Fantasia</th>
+        <th>Email</th>
+        <th>Telefone Comercial</th>
+        <th>Celular</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for pj in pjs %}
+      <tr>
+        <td>{{ pj.id }}</td>
+        <td>{{ pj.nome }}</td>
+        <td>{{ pj.email }}</td>
+        <td>{{ pj.telefone_comercial }}</td>
+        <td>{{ pj.telefone_celular }}</td>
+        <td><a href="/imobiliaria/detalhes_pj={{ pf.id }}">Mais Detalhes</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table> 
+
+</div>

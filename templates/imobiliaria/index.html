@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+
+    <div class="panel-heading">
+        <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/imobiliaria">
+                SI</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Cadastrar
+                    <span class="caret"></span></a>
+
+                    <ul class="dropdown-menu">
+                      <li><a href="/imobiliaria/nova_pessoa_fisica">
+                      Pessoa Física</a></li>
+                      <li><a href="/imobiliaria/nova_pessoa_juridica">
+                      Pessoa Jurídica</a></li>
+                      <li><a href="/imobiliaria/novo_apartamento">
+                      Apartamento</a></li>
+                      <li><a href="/imobiliaria/nova_casa">
+                      Casa ou Sobrado</a></li>
+                      <li><a href="/imobiliaria/nova_sala_comercial">
+                        Sala Comercial</a></li>
+                      <li>
+                      <a href="/imobiliaria/novo_estabelecimento_comercial">
+                      Estabelecimento Comercial</a></li>
+                      <li><a href="/imobiliaria/novo_terreno_lote">Terreno ou Lote
+                      </a></li>
+                      <li><a href="/imobiliaria/nova_propriedade_rural">
+                      Propriedade Rural</a></li>
+                      <li><a href="/imobiliaria/novo_empreendimento">
+                        Empreendimento
+                      </a></li>
+                    </ul>
+
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown"
+                    href="#">
+                    Pesquisar
+                    <span class="caret"></span></a>
+
+                    <ul class="dropdown-menu">
+                      <li><a href="/imobiliaria/exibir_pf">
+                      Pessoa Física</a></li>
+                      <li><a href="/imobiliaria/exibir_pj">
+                      Pessoa Jurídica</a></li>
+                      <li>
+                      <a href="/imobiliaria/exibir_apartamento">
+                      Apartamento
+                      </a></li>
+                      <li>
+                      <a href="/imobiliaria/exibir_casa">
+                      Casa ou Sobrado</a></li>
+                      <li>
+                      <a href="/imobiliaria/exibir_salacomercial">
+                      Sala Comercial</a></li>
+                      <li>
+                      <a href="/imobiliaria/exibir_estabalecimentocomercial">
+                      Estabelecimento Comercial</a></li>
+                      <li><a href="/imobiliaria/exibir_terrenolote">Terreno ou Lote</a></li>
+                      <li>
+                      <a href="/imobiliaria/exibir_propriedaderural">Propriedade Rural</a></li>
+                      <li><a href="/imobiliaria/exibir_empreendimento">
+                      Empreendimento</a></li>
+                      <li><a href="/imobiliaria/pesquisa_atendimento">
+                      Atendimento</a></li>
+                    </ul>
+
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Atendimento
+                    <span class="caret"></span></a>
+
+                    <ul class="dropdown-menu">
+                      <li><a href="/imobiliaria/novo_atendimento">
+                      Novo</a></li>
+                      <li><a href="/imobiliaria/exibir_atendimento">Exibir Todos</a></li>
+                      
+                    </ul>
+                </li>
+                <!-- <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Visitas
+                    <span class="caret"></span></a>
+
+                    <ul class="dropdown-menu">
+                      <li><a href="/imobiliaria/agendar_visita">Agendar</a></li>
+                      <li><a href="#">Editar</a></li>
+                    </ul>
+                </li> -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Capitações
+                    <span class="caret"></span></a>
+
+                    <ul class="dropdown-menu">
+                      <li><a href="/imobiliaria/nova_capitacao">Novo</a></li>
+                      <li><a href="/imobiliaria/exibir_captacao">Exibir Todas</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+                <li><a href="#"><span class="glyphicon glyphicon-user">
+                </span>
+               {{ request.user }}
+                </a></li>
+                <li><a href="/contas/logout">
+                <span class="glyphicon glyphicon-log-out"></span>
+               Sair
+                </a></li>
+            {% else %}
+                <li><a href="/contas">
+                    <span class="glyphicon glyphicon-log-in">
+                    </span> Entrar
+                </a></li>
+           {% endif %}
+            </ul>
+         </div>
+        </nav>
+    </div>
+{% endblock %}
+
+{% block body %}
+Block Bood of the imobiliaria/index
+
+
+{% endblock %}

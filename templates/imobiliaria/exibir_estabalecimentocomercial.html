@@ -1,0 +1,38 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+
+<div class='barra_pesquisa'>
+  <input onkeyup="funcao_ajax(resposta, '/imobiliaria/pesquisa_apartamento', value)"
+placeholder='Digite o Bairro'>
+</div>
+<div class='scroll' id='resposta'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Descrição Curta</th>
+        <th>Estado</th>
+        <th>Cidade</th>
+        <th>Bairro</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for estabelecimentocomercial in estabalecimentoscomerciais %}
+      <tr>
+        <td>{{ estabelecimentocomercial.id }}</td>
+        <td>{{ estabelecimentocomercial.descricao_curta }}</td>
+        <td>{{ estabelecimentocomercial.estado }}</td>
+        <td>{{ estabelecimentocomercial.cidade }}</td>
+        <td>{{ estabelecimentocomercial.bairro }}</td>
+        <td><a href="/imobiliaria/detalhes_estabelecimentocomercial={{ estabelecimentocomercial.id }}">
+            Mais Detalhes</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

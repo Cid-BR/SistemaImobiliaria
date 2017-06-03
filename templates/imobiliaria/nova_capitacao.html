@@ -1,0 +1,57 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+<div class="panel-body">
+    
+  <div class='formulario'>
+        
+      <form method="post">
+      {% csrf_token %}
+        <div style="width: 65%; margin-right: auto; margin-left: auto;">
+            {{msg}}
+
+            <h3>Cadastro de Nova Captação</h3>
+
+            </br>  
+            <p>{{ form.proprietario.label }}</p>
+            <p>{{ form.proprietario }}</p>
+            </br>
+
+            <p>{{ form.tipo.label }}</p>
+            <p>{{ form.tipo }}</p>
+            </br>
+
+            <p>{{ form.bairro.label }}</p>
+            <p>{{ form.bairro }}</p>
+            </br>
+
+            <p>{{ form.cidade.label }}</p>
+            <p>{{ form.cidade }}</p>
+            </br>
+
+            <p>{{ form.proprietario.label }}</p>
+            <p>{{ form.proprietario }}</p>
+            </br>
+            
+            <p>{{ form.telefone.label }}</p>
+            <p>{{ form.telefone }}</p>
+            {{form.telefone.help_text}}
+            </br>
+            </br>
+
+            <p>{{ form.email.label }}</p>
+            <p>{{ form.email }}</p>
+            {{form.email.help_text}}
+            
+            </br>
+            </br>
+            </br>
+            <button type="submit" class="btn btn-default">Enviar</button>
+        </div>
+      </form>
+  </div>
+  
+</div>
+
+{% endblock %}
+

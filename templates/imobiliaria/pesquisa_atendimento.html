@@ -1,0 +1,74 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+
+<div class="panel panel-default">
+  	<div class="panel-body">
+	    <p>
+	    	Preencha apenas os campos com as caracteristicas que deseja encontrar e clique em PESQUISAR
+	    </p>
+	    <form action="/imobiliaria/realizar_pesquisa" method="post"> 
+	    {% csrf_token %}
+	    <table class="table" style="margin-left: auto; 
+			margin-right: auto;">
+			<tr>
+				
+				<td>Pesquisar por cliente </br>
+				{% if clientes %}
+		  	 	<select name='client'>
+		  	 		<option value="all">Todos</option>
+			  	 	{% for cliente in clientes %}
+				  		<option value="{{ cliente.id }}">{{ cliente.nome }}
+				  		</option>
+				 	{% endfor %}
+				</select> 
+				{% endif %}	
+				</td>
+				
+				<td>
+					Pesquisar por situação </br>
+				<select name="situation">
+			  		<option value="AB">Aberto</option>
+			  		<option value="AT">Em Atendimento</option>
+			  		<option value="NF">Negócio Fechado</option>
+			  		<option value="NR">Negócio não Realizado</option>
+			  	</select>	
+				</td>
+				
+				<td>
+					Por data de registro</br>
+					<select name="period">
+				  		<option value="any_day">Qualquer dia</option>
+				  		<option value="today">Hoje</option>
+				  		<option value="tomorrow">Amanhã</option>
+				  		<option value="next_seven_days">Próximos 7 dias
+				  		</option>
+				  		<option value="next_thirty_days">Próximos 30 dias
+				  		</option>
+				  	</select>	
+				</td>
+			</tr>
+		</table>
+		<div style="margin-top: 3%;">
+			<button type="submit" class="btn btn-default" 
+			style="margin-right: 5%;">
+				Pesquisar
+			</button>
+			<!-- <button type="button" class="btn btn-default" style="margin-right: 5%;">
+				Limpar
+			</button> -->
+			<button type="button" class="btn btn-default" style="margin-right: 5%;">
+				Mostrar Tudo
+			</button>
+		</div>
+		</form>
+	</div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

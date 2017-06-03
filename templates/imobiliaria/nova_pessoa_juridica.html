@@ -1,0 +1,110 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+<div class="panel-body">
+    
+  <div class='formulario'>
+        
+      <form method="post" 
+      action="/imobiliaria/nova_pessoa_juridica" 
+      enctype="multipart/form-data">
+      {% csrf_token %}
+        <div style="width: 65%; margin-right: auto; margin-left: auto;">
+            {{msg}}
+
+            <h3>Cadastro de Pessoa Jurídica</h3>
+
+            </br>  
+            <p>{{ form.nome.label }}</p>
+            <p>{{ form.nome }}</p>
+            Nome Fantasia da Empresa
+            </br>
+            </br>
+
+            <p>{{ form.razao_social.label }}</p>
+            <p>{{ form.razao_social }}</p>
+            </br>
+            </br>
+
+            <p>{{ form.cpf.label }}</p>
+            <p>{{ form.cpf }}</p>
+            {{form.cpf.help_text}}
+            </br>
+            </br>
+            <p>{{ form.rg.label }}</p>
+            <p>{{ form.rg }}</p>
+            {{form.rg.help_text}}
+
+            </br>
+            </br>
+            <p>{{ form.cnpj.label }}</p>
+            <p>{{ form.cnpj }}</p>
+            
+            </br>
+            <p>{{ form.ie.label }}</p>
+            <p>{{ form.ie }}</p>
+
+            </br>
+            <p>{{ form.email.label }}</p>
+            <p>{{ form.email }}</p>
+            {{form.email.help_text}}
+
+            </br>
+            </br>
+            <p>{{ form.estado_civil.label }}</p>
+            <p>{{ form.estado_civil }}</p>
+            
+            </br>
+            <p>{{ form.telefone_comercial.label }}</p>
+            <p>{{ form.telefone_comercial }}</p>
+            {{form.telefone_comercial.help_text}}
+
+            </br>
+            </br>
+            <p>{{ form.telefone_celular.label }}</p>
+            <p>{{ form.telefone_celular }}</p>
+            {{form.telefone_celular.help_text}}
+
+            </br>
+            </br>
+            <p>{{ form.logradouro.label }}</p>
+            <p>{{ form.logradouro }}</p>
+            {{form.logradouro.help_text}}
+
+            </br>
+            </br>
+            <p>{{ form.numero.label }}</p>
+            <p>{{ form.numero }}</p>
+
+            </br>
+            <p>{{ form.bairro.label }}</p>
+            <p>{{ form.bairro }}</p>
+
+            </br>
+            <p>{{ form.cidade.label }}</p>
+            <p>{{ form.cidade }}</p>
+
+            </br>
+            <p>{{ form.estado.label }}</p>
+            <p>{{ form.estado }}</p>
+
+            </br>
+            <p>{{ form.pais.label }}</p>
+            <p>{{ form.pais }}</p>
+
+            </br>
+            <p>{{ form.observacoes.label }}</p>
+            <p>{{ form.observacoes }}</p>
+            <p>{{ form.observacoes.help_text }}</p>
+
+            </br>
+            </br>
+            <button type="submit" class="btn btn-default">Enviar</button>
+        </div>
+      </form>
+  </div>
+  
+</div>
+
+{% endblock %}
+

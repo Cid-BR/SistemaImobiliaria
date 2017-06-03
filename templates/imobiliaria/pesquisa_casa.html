@@ -1,0 +1,29 @@
+<div class='scroll'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Descrição Curta</th>
+        <th>Estado</th>
+        <th>Cidade</th>
+        <th>Bairro</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for casa in casas %}
+      <tr>
+        <td>{{ casa.id }}</td>
+        <td>{{ casa.descricao_curta }}</td>
+        <td>{{ casa.estado }}</td>
+        <td>{{ casa.cidade }}</td>
+        <td>{{ casa.bairro }}</td>
+        <td>
+        <a href="/imobiliaria/detalhes_casa={{ casa.id }}">
+        Mais Detalhes</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table> 
+
+</div>

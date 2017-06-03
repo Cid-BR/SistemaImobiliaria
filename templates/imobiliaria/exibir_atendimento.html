@@ -1,0 +1,46 @@
+{% extends 'imobiliaria/index.html' %}
+{% load si_tags %}
+{% block body %}
+
+<div class='scroll' id='resposta'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Situação</th>
+        <th>Registrado Em</th>
+        <th>Visitas Agendadas</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for at in ats %}
+      <tr>
+        <td>{{ at.cliente }}</td>
+        <!-- situacao -->
+        {% if at.situacao == "AB" %}
+        <td>Em Aberto</td>
+        {% elif at.situacao == "AT" %}
+        <td>Em Atendimento</td>
+        {% elif at.situacao == "NF" %}
+        <td>Negócio Fechado</td>
+        {% elif at.situacao == "NR" %}
+        <td>Negócio Não Realizado</td>
+        {% else %}
+        <td>Testing</td>
+        {% endif %}
+        <!-- end situacao -->
+        <td>{{ at.data }}</td>
+        <td><a href="#" title="Click aqui para ver as visitas agendadas">
+        {% number_of_visits at.id %}</a></td>
+        <td><a href="/imobiliaria/detalhes_atendimento={{ at.id }}">
+            Mais Detalhes</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}
+{% block footer %}{% endblock %}

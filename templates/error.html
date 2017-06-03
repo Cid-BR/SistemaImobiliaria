@@ -1,0 +1,15 @@
+
+{% extends 'index.html' %}
+
+{% block body %}
+    <div class="container">
+        </br>
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+            {% if form %}
+            	{{ form.errors }}
+            {% endif %}
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+<div class="panel-body">
+
+  <div class='formulario'>
+        <h1>Cadastrar Nova Capitação</h1>
+        </br>
+        </br>
+      <form method="post">{% csrf_token %}
+        <div class="table-responsive">
+          <table class=table>
+            <tr>
+                <th>Tipo</th><td>{{form.tipo}}</td>
+                <th>Bairro</th><td>{{form.bairro}}</td>
+            </tr>
+            <tr>
+                <th>Cidade</th><td>{{form.cidade}}</td>
+                <th>Proprietario</th><td>{{form.proprietario}}</td>
+            </tr>
+            <tr>
+                <th>Telefone</th><td>{{form.telefone}}</td>
+                <th>E-Mail</th><td>{{form.email}}</td>
+            </tr>
+          </table>
+        </div>
+        <button type="submit" class="btn btn-default">Enviar</button>
+      </form>
+  </div>
+
+</div>
+
+{% endblock %}

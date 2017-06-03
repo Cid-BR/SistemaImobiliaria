@@ -1,0 +1,35 @@
+/*the class my_menu inherits the properties of the breadcrumbs*/
+.table{
+    color: #1144aa;
+}
+
+input{
+    width: 100%;
+    text-align: center;
+    
+}
+
+.formulario{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panel.panel-danger{
+    font-size: 200%;
+    text-align: center;
+}
+
+.scroll{
+	max-width: 98%;
+	margin-left: auto; 
+	max-height: 300px;
+	margin-right: auto; 
+	overflow: auto;
+}
+
+.barra_pesquisa{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5%;
+}

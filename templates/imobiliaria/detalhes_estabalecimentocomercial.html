@@ -1,0 +1,187 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+<div class="panel-body">
+
+  <div class='formulario'>
+        <h1>Cadastro de Estabelecimento Comercial</h1>
+        </br>
+        </br>
+      <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+        <div class="table-responsive">
+          <table class='table'>
+            <td>{{ form.disponivel }}</td><th>Disponível</th>
+            <td>{{ form.exibir }}</td><th>Exibir no Site</th>
+            <td>{{ form.destaque }}</td><th>Destaque</th>
+          </table>
+
+          <table class="table">
+            <tr>
+                <th>Descrição Curta</th><td>{{ form.descricao_curta }}</td>
+                <th>Proprietário</th><td>{{ form.proprietario }}</td>
+                <th>Logradouro</th><td>{{ form.logradouro }}</td>
+            </tr>
+            <tr>
+                <th>Número</th><td>{{ form.numero }}</td>
+                <th>Complemento</th><td>{{ form.complemento }}</td>
+                <th>Bairro</th><td>{{ form.bairro }}</td>
+            </tr>
+            <tr>
+                <th>Cidade</th><td>{{ form.cidade }}</td>
+                <th>Estado</th><td>{{ form.estado }}</td>
+                <th>País</th><td>{{ form.pais }}</td>
+            </tr>
+            <tr>
+                <th>CEP</th><td>{{ form.cep }}</td>
+            </tr>
+        </table>
+        </br></br>
+        <table class='table'>
+            <tr>
+                <th>Ponto de Referência</th>
+                <td>{{ form.ponto_referencia }}</td>
+            </tr>
+            <tr>
+                <th>Posse das Chaves</th><td>{{ form.posse_chave }}</td>
+            </tr>
+            <tr>
+                <th>Descrição</th><td>{{ form.descricao }}</td>
+            </tr>
+        </table>
+        </br></br>
+        <table class='table'>
+            <tr>
+                <th>Locatário</th>
+                <td>{{ form.locatario }}
+                </td>
+                <th>Tipo</th><td>{{ form.tipo }}</td>
+                <th>Estado de Conservação</th>
+                <td>{{ form.estado_conservacao }}</td>
+            </tr>
+            <tr>
+                <th>Área Privativa</th>
+                <td>{{ form.area_privativa }}
+                </td>
+                <th>Àrea Total</th><td>{{ form.area_total }}</td>
+                <th>Idade</th><td>{{ form.idade }}</td>
+            </tr>
+            <tr>
+                <th>Avaliação</th><td>{{ form.avaliacao }}</td>
+                <th>Sanitários</th><td>{{ form.sanitarios }}</td>
+                <th>Copas</th><td>{{ form.copas }}</td>
+            </tr>
+            <tr>
+                <th>Pavimentos</th><td>{{ form.pavimentos }}
+                <th>Garagens</th><td>{{ form.garagens }}</td>
+                <th>Elevadores</th><td>{{ form.elevadores }}
+            </tr>
+
+        </table>
+        </br></br>
+        <h4>Características</h4>
+        <table class='table' style='float: left'>
+            <tr>
+                <td>{{ form.interfone }}</td><th>Interfones</th>
+                <td>{{ form.sala_reunioes }}</td><th>Sala Reuniões</th>
+                <td>{{ form.rede_logica }}</td><th>Rede Lógica</th>
+            </tr>
+            <tr>
+                <td>{{ form.rede_piso }}</td><th>Rede de Piso</th>
+                <td>{{ form.ar_condicionado_central }}</td>
+                <th>Ar Condicionado Central</th>
+                <td>{{ form.escada_rolante }}</td><th>Escada Rolante</th>
+            </tr>
+            <tr>
+                <td>{{ form.escada_emergencia }}</td><th>Escada de Emergência</th>
+                <td>{{ form.detector_fumaca }}</td><th>Detector de Fumaça</th>
+                <td>{{ form.alarme_incendio }}</td>
+                <th>Alarme de Incêndio</th>
+            </tr>
+            <tr>
+                <td>{{ form.sprinkler }}</td><th>Sprinkler</th>
+                <td>{{ form.gerador }}</td><th>Gerador</th>
+                <td>{{ form.alarme_incendio }}</td><th>Alarme de Incêndio</th>
+            </tr>
+
+        </table>
+
+        </br></br>
+        <h4>Venda</h4>
+        <table class='table' style='width: 50%;'>
+            <th>Valor de Venda</th><td>{{ form.valor_venda }}</td>
+
+        </table>
+
+        <table class='table'>
+            <tr>
+                <th>Detalhes sobre o Pagamento</th>
+                <td>{{ form.pagamento }}</td>
+            </tr>
+        </table>
+        </br></br>
+        <h4>Aluguel</h4>
+        <table class='table'>
+            <tr>
+                <th>Valor do Aluguel</th><td>{{ form.valor_aluguel }}</td>
+                <th>Freqencia Aluguel</th><td>{{ form.frequencia_aluguel }}</td>
+            </tr>
+        </table>
+
+        </br></br>
+        <h4>Taxas</h4>
+        <table class='table'>
+            <tr>
+                <th>Condomínio</th><td>{{ form.condominio }}</td>
+                <th>IPTU</th><td>{{ form.iptu }}</td>
+                <th>Taxas Extras</th><td>{{ form.taxas_extras }}</td>
+            </tr>
+        </table>
+        </br></br>
+        <h4>Documentos</h4>
+        <table class='table'>
+            <tr>
+                <th>Número da Matrícola</th>
+                <td>{{ form.numero_matricula }}</td>
+                <th>Situação</th><td>{{ form.situacao }}</td>
+                <th>Título Aquisitivo</th><td>{{ form.titulo_aquisitivo }}
+                </td>
+            </tr>
+        </table>
+        </br></br>
+        <h4>Imagens</h4>
+        <table class='table'>
+            <tr>
+                <th>Imagem 1</th><td>{{ form.img1 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 2</th><td>{{ form.img2 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 3</th><td>{{ form.img3 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 4</th><td>{{ form.img4 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 5</th><td>{{ form.img5 }}</td>
+            </tr>
+            <tr>
+                <th>Imagem 6</th><td>{{ form.img6 }}</td>
+            </tr>
+        </table>
+        </br></br>
+        <h4>Multimídia</h4>
+        <table class='table' style='width: 50%'>
+            <tr>
+                <th>Vídeo no Youtube</th><td>{{ form.video }}</td>
+            </tr>
+        </table>
+        </div>
+        <button type="submit" class="btn btn-default">Enviar</button>
+      </form>
+  </div>
+
+</div>
+
+{% endblock %}

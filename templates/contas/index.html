@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="panel-body">
+
+  <div class='formulario'>
+      <form method="post" action="/contas/">{% csrf_token %}
+        <div class="table-responsive">
+          <table class="table">
+            <tr><td><label>Login</label></td></tr>
+            <tr>
+                <td>Usuário</td><td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>Senha</td><td>{{ form.password }}</td>
+            </tr>
+          </table>
+        </div> 
+        <button type="submit" class="btn btn-default">Enviar</button>
+      </form>
+  </div>
+  
+</div>
+
+{% endblock %}

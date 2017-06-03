@@ -1,0 +1,38 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+
+<div class='barra_pesquisa'>
+  <input onkeyup="funcao_ajax(resposta, '/imobiliaria/pesquisa_terrenolote', value)"
+placeholder='Digite o Bairro'>
+</div>
+<div class='scroll' id='resposta'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Descrição Curta</th>
+        <th>Estado</th>
+        <th>Cidade</th>
+        <th>Bairro</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for terrenolote in terrenos %}
+      <tr>
+        <td>{{ terrenolote.id }}</td>
+        <td>{{ terrenolote.descricao_curta }}</td>
+        <td>{{ terrenolote.estado }}</td>
+        <td>{{ terrenolote.cidade }}</td>
+        <td>{{ terrenolote.bairro }}</td>
+        <td><a href="/imobiliaria/detalhes_terrenolote={{ terrenolote.id }}">
+        Mais Detalhes</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

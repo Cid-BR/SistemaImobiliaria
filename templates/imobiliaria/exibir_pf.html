@@ -1,0 +1,37 @@
+{% extends 'imobiliaria/index.html' %}
+
+{% block body %}
+
+<div class='barra_pesquisa'>
+  <input onkeyup="funcao_ajax(resposta, '/imobiliaria/pesquisa_pf', value)" 
+placeholder='Digite o Nome do Cliente'>
+</div>
+<div class='scroll' id='resposta'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone Comercial</th>
+        <th>Celular</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for pf in pfs %}
+      <tr>
+        <td>{{ pf.id }}</td>
+        <td>{{ pf.nome }}</td>
+        <td>{{ pf.email }}</td>
+        <td>{{ pf.telefone_comercial }}</td>
+        <td>{{ pf.telefone_celular }}</td>
+        <td><a href="/imobiliaria/detalhes_pf={{ pf.id }}">Mais Detalhes</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table> 
+
+</div>
+
+{% endblock %}
