@@ -210,7 +210,7 @@ class Casa(Imovel):
     mobiliado = models.BooleanField(blank=True)
     moveis_planejados = models.BooleanField(verbose_name='Móveis Planejados'
     , blank=True)
-    piscina_privativa = models.BooleanField(verbose_name='Piscine Privativa'
+    piscina_privativa = models.BooleanField(verbose_name='Piscina Privativa'
     , blank=True)
     quadra_esportiva = models.BooleanField(verbose_name='Quadra Esportiva'
     , blank=True)
@@ -233,8 +233,8 @@ class Casa(Imovel):
     , null=True, blank=True)
     taxas_extras = models.FloatField(verbose_name='Taxas Extras'
     , null=True, blank=True)
-    numero_matricula = models.CharField(max_length=100,
-    verbose_name='Número da Matrícula', null=True, blank=True)
+    numero_matricola = models.CharField(max_length=100,
+    verbose_name='Número da Matrícola', null=True, blank=True)
     situacao = models.CharField(max_length=100, choices=SITUACAO_CHOICES
     , null=True, blank=True)
     titulo_aquisitivo = models.CharField(max_length=100,
