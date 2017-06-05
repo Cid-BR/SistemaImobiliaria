@@ -7,7 +7,14 @@
 			<div style="width: 65%; margin-right: auto; margin-left: auto;">
 				{{msg}}
 				<h3>Cadastro de Empreendimento</h3>
-
+				<table style="width: 100%">
+                <tr>
+                    <td>{{ form.disponivel }}</td>
+                    <td>{{ form.disponivel.label }}</td>
+                    <td>{{ form.exibir }}</td><td>{{ form.exibir.label }}</td>
+                    <td>{{ form.destaque }}</td><td>{{ form.destaque.label }}</td>
+                </tr>
+              </table> 
 			</div>
 		</form>
 	</div>
