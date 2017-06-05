@@ -123,7 +123,7 @@ def novo_empreendimento(request):
             context.update({'msg': form.errors})
     else:
         form = EmpreendimentoForm()
-        context.update({'msg': form})
+        context.update({'form': form})
 
     return render(request, 'imobiliaria/novo_empreendimento.html',
      context)
