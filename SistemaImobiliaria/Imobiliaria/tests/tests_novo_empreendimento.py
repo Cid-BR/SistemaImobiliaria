@@ -1,6 +1,5 @@
 from django.test import TestCase
 
-# test novo_empreendimento 
 class NovoEmpreendimentoGet(TestCase):
 	def setUp(self):
 		self.resp = self.client.get('/imobiliaria/novo_empreendimento')
